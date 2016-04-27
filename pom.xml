@@ -49,12 +49,13 @@
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/ingenieux/lambada/issues</url>
+        <url>https://github.com/ingenieux/ngrok-maven-plugin/issues</url>
     </issueManagement>
 
     <scm>
         <connection>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git
+        </developerConnection>
         <url>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</url>
     </scm>
 
@@ -119,7 +120,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.4</version>
                 <configuration>
                     <goalPrefix>ngrok</goalPrefix>
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
@@ -138,6 +139,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jetbrains.kotlin</groupId>
@@ -170,19 +179,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.3</version>
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
 
     <!--
     <profiles>
