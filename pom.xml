@@ -10,10 +10,54 @@
 
     <name>ngrok maven plugin</name>
 
+    <parent>
+        <artifactId>oss-parent</artifactId>
+        <groupId>org.sonatype.oss</groupId>
+        <version>9</version>
+    </parent>
+
+    <inceptionYear>2016</inceptionYear>
+
+    <prerequisites>
+        <maven>3.3.9</maven>
+    </prerequisites>
+
     <properties>
         <kotlin.version>1.0.1-2</kotlin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>ingenieux</name>
+        <url>http://ingenieux.com.br</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>aldrinleal</id>
+            <name>Aldrin Leal</name>
+            <timezone>-3</timezone>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/ingenieux/lambada/issues</url>
+    </issueManagement>
+
+    <scm>
+        <connection>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</developerConnection>
+        <url>scm:git:git@github.com:ingenieux/ngrok-maven-plugin.git</url>
+    </scm>
+
 
     <dependencies>
         <dependency>
@@ -126,6 +170,21 @@
             </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.3</version>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <!--
     <profiles>
         <profile>
             <id>run-its</id>
@@ -166,4 +225,6 @@
             </build>
         </profile>
     </profiles>
+
+    -->
 </project>
